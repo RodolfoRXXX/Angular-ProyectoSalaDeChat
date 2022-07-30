@@ -1,0 +1,21 @@
+<div class="h-100 w-100 border p-2">
+    <div class="w-100 border-bottom" style="height: 30px;"><p class="text-center"><b>Integrantes</b></p></div>
+    <div class="w-100 border p-2" style="height: calc(100% - 30px);">
+
+        <div *ngFor="let integrante of integrantes" 
+             class="w-100 d-flex justify-content-between mb-2 p-1" 
+             style="min-height: 35px; cursor: pointer"
+             (click)="seleccionInt( integrante.id, integrante.active )"
+             [ngClass]="(integrante.active)?'active':'inactive'"
+        >
+            <div class="d-flex justify-content-start">
+                <img [src]="integrante.foto" class="img-fluid rounded-circle" alt="" style="height: 35px; width: 35px; object-fit: cover; ">
+                <div class="ms-2"><h5 class="mt-1" [style.color]="integrante.color">{{ integrante.nombre }}</h5></div>
+            </div>
+            <div class="text-end">
+                <h6 class="mt-2 me-1" style="font-size: 0.8rem; text-decoration: underline; cursor: pointer;">Eliminar</h6>
+            </div>
+        </div>
+
+    </div>
+</div>

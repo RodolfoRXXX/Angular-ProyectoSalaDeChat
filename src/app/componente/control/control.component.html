@@ -1,0 +1,19 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="d-flex w-100 h-100">
+    <div class="w-75 h-100 d-flex flex-column ps-2 pe-2">
+        <div class="h-25"><p>Esta escribiendo: <span [style.color]="integrante.color"><b>{{ integrante.nombre }}</b></span></p></div>
+        <input type="text"
+            class="w-100 h-75" 
+            name="mensaje"
+            formControlName="mensaje"
+            placeholder="Escribí aquí"
+        />
+        <input type="hidden" formControlName="id">
+        <input type="hidden" formControlName="nombre">
+        <input type="hidden" formControlName="color">
+    </div>
+    <div class="w-25 h-100">
+        <button type="submit" class="w-100 h-100 btn btn-outline-danger" [disabled]="integrante.id == 0 || formulario.invalid">Enviar</button>
+    </div>
+</form>    
+
+

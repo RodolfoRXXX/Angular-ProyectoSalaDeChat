@@ -1,0 +1,11 @@
+<div class="h-100 w-100 border p-2 d-flex flex-column">
+    <div class="w-100 border-bottom" style="height: 30px;"><p class="ms-2"><b>Mensajes</b></p></div>
+    <div class="w-100 border p-3 bg-secondary bg-opacity-10" style="height: 100%; overflow-y: scroll;">
+        <div *ngFor="let mensaje of mensajes" class="w-100 mb-3 d-flex" [ngClass]="mensaje.nombre == 'Yo'?'justify-content-end':'justify-content-start'" style="min-height: 35px;">
+            <div class="w-25 h-100 p-1 bg-light">
+                <p class="d-block mb-0" style="font-size: 0.85rem;"><span [style.color]="mensaje.color"><b>{{ mensaje.nombre }}</b></span> dice:</p>
+                <p class="d-block mb-0 text-end"><b>{{ mensaje.mensaje }}</b></p>
+            </div>
+        </div>
+    </div>
+</div>
